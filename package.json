@@ -10,6 +10,7 @@
     "watch": "ttsc --build --watch",
     "rebuild": "yarn clean && yarn build",
     "prepublishOnly": "yarn rebuild",
+    "postversion": "git push --tags && git push",
     "clean": "rm -rf lib"
   },
   "devDependencies": {
