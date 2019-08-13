@@ -5,6 +5,9 @@
   "repository": "https://github.com/stackeat/elementary.git",
   "author": "eduard@stackeat.com",
   "license": "MIT",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
     "build": "ttsc --build",
     "watch": "ttsc --build --watch",
