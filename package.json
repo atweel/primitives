@@ -1,8 +1,20 @@
 {
   "name": "@stackeat/elementary",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/exports.js",
   "repository": "https://github.com/stackeat/elementary.git",
   "author": "eduard@stackeat.com",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "ttsc --build",
+    "watch": "ttsc --build --watch",
+    "rebuild": "yarn clean && yarn build",
+    "prepublishOnly": "yarn rebuild",
+    "clean": "rm -rf lib"
+  },
+  "devDependencies": {
+    "@zerollup/ts-transform-paths": "^1.7.3",
+    "ttypescript": "^1.5.7",
+    "typescript": "^3.5.3"
+  }
 }
