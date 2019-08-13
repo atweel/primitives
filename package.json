@@ -1,6 +1,6 @@
 {
   "name": "@stackeat/elementary",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/exports.js",
   "repository": "https://github.com/stackeat/elementary.git",
   "author": "eduard@stackeat.com",
