@@ -1,10 +1,13 @@
 {
-  "name": "@stackeat/elementary",
+  "name": "@stackeat/primitives",
   "version": "0.1.2",
   "main": "lib/exports.js",
   "repository": "https://github.com/stackeat/elementary.git",
   "author": "eduard@stackeat.com",
   "license": "MIT",
+  "files": [
+    "lib"
+  ],
   "publishConfig": {
     "access": "restricted"
   },
