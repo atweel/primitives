@@ -2,8 +2,8 @@
   "name": "@stackeat/primitives",
   "version": "0.1.3",
   "main": "lib/exports.js",
-  "repository": "https://github.com/stackeat/elementary.git",
-  "author": "eduard@stackeat.com",
+  "repository": "https://github.com/atweel/primitives.git",
+  "author": "eduard@atweel.com",
   "license": "MIT",
   "directories": {
     "lib": "lib"
