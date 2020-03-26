@@ -20,11 +20,24 @@
     "rebuild": "yarn clean && yarn build",
     "postversion": "git push --tags && git push",
     "prepack": "yarn rebuild",
-    "clean": "rm -rf lib"
+    "clean": "rm -rf lib",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "yarn lint --fix",
+    "test": "echo \"No tests available\"",
+    "integrate": "yarn clean && yarn lint && yarn build && yarn test"
   },
   "devDependencies": {
     "@zerollup/ts-transform-paths": "^1.7.3",
     "ttypescript": "^1.5.7",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
+    "husky": "^4.2.3",
+    "lerna": "^3.14.1",
+    "node-dev": "^4.0.0",
+    "ts-node": "^8.8.1",
+    "ts-node-dev": "^1.0.0-pre.44"
   }
 }
