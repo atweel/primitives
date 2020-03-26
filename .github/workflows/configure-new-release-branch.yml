@@ -1,8 +1,7 @@
 name: Configure new release branch
 
 on:
-  create:
-    branches: [ "releases/*" ]
+  create
 
 jobs:
   reset_version:
