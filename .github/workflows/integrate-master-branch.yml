@@ -32,3 +32,4 @@ jobs:
         echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc 
     - run: yarn install
     - run: yarn integrate
+    - run: yarn version --patch
