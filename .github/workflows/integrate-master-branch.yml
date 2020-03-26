@@ -33,11 +33,13 @@ jobs:
     - run: yarn install
     - run: yarn integrate
 
-  increment_version:
+  tag:
     runs-on: ubuntu-latest
 
     needs: [build]
 
     steps:
     - uses: actions/checkout@v2
+    - run: git config --global user.email "robby@atweel.com"
+    - run: git config --global user.name "Robby the robot"
     - run: yarn version --patch --no-commit-hooks
