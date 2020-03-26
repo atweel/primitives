@@ -13,3 +13,7 @@ jobs:
     - run: git config --global user.name "Robby the robot"
     - run: yarn config set version-git-message "Reset version according to branch (%s)"
     - run: yarn version --new-version ${GITHUB_REF#refs/heads/releases\/v}.0 --no-commit-hooks
+    - run: git checkout master
+    - run: git pull
+    - run: git merge -X ours $GITHUB_REF
+    - run: git push
