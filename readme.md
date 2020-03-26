@@ -1,0 +1,1 @@
+![Integrate master branch](https://github.com/atweel/primitives/workflows/Integrate%20master%20branch/badge.svg?branch=master)
