@@ -1,0 +1,13 @@
+name: Configure new release branch
+
+on:
+  create:
+    branches: [ "releases/*" ]
+
+jobs:
+  reset_version:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - run: yarn version --new-version ${$GITHUB_REF#"releases/v"}.0 --no-commit-hooks
