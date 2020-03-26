@@ -9,6 +9,5 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - run: |
-      echo ${GITHUB_REF}
-      yarn version --new-version ${GITHUB_REF#refs/heads/releases\/v}.0 --no-commit-hooks
+    - run: echo ${GITHUB_REF}
+    - run: yarn version --new-version ${GITHUB_REF#refs/heads/releases\/v}.0 --no-commit-hooks
