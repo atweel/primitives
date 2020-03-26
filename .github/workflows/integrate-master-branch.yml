@@ -42,4 +42,5 @@ jobs:
     - uses: actions/checkout@v2
     - run: git config --global user.email "robby@atweel.com"
     - run: git config --global user.name "Robby the robot"
+    - run: yarn config set version-git-message "Update version to %s"
     - run: yarn version --patch --no-commit-hooks
