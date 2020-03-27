@@ -28,8 +28,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: |
-        echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc 
+    - run: echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc 
     - run: yarn install
     - run: yarn integrate
 
@@ -40,7 +39,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - run: git config --global user.email "robby@atweel.com"
-    - run: git config --global user.name "Robby the robot"
-    - run: yarn config set version-git-message "Update version to %s"
-    - run: yarn version --patch --no-commit-hooks
+    - name: Configure git user name & email
+      run: |
+        git config --global user.email "robby@atweel.com" && \
+        git config --global user.name "Robby the robot"
+    - name: Increment prerelease version if no version tag assigned
+      run: |
+        if [[ $(git tag --points-at HEAD) ==  "v*" ]]; 
+          then yarn version --prerelease --no-commit-hooks 
+        fi
