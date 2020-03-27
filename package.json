@@ -15,7 +15,7 @@
     "access": "restricted"
   },
   "scripts": {
-    "build": "ttsc --build --force",
+    "build": "ttsc --build",
     "watch": "ttsc --build --watch",
     "rebuild": "yarn clean && yarn build",
     "postversion": "git push --tags && git push",
