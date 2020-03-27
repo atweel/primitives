@@ -45,6 +45,6 @@ jobs:
         git config --global user.name "Robby the robot"
     - name: Increment prerelease version if no version tag assigned
       run: |
-        if [[ $(git tag --points-at HEAD) ==  "v*" ]]; 
+        if [[ $(git tag --points-at HEAD) !=  "v*" ]]; 
           then yarn version --prerelease --no-commit-hooks 
         fi
