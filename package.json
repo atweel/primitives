@@ -1,28 +1,55 @@
 {
-  "name": "root",
-  "private": true,
-  "scripts": {
-    "build": "lerna run build --scope @atweel/primitives",
-    "rebuild": "lerna run rebuild --scope @atweel/primitives",
-    "pack": "lerna exec --scope @atweel/primitives -- yarn pack",
-    "test": "lerna run test --scope @atweel/primitives",
-    "test:integration": "/bin/bash ./scripts/run_integration_test.sh",
-    "lint": "eslint --ext .ts .",
-    "integrate": "yarn lint && yarn rebuild && yarn test && yarn test:integration"
+  "name": "@atweel/primitives",
+  "version": "0.1.14",
+  "main": "library/exports.js",
+  "repository": "https://github.com/atweel/primitives.git",
+  "author": "eduard@atweel.com",
+  "license": "MIT",
+  "directories": {
+    "library": "library"
   },
-  "workspaces": [
-    "package",
-    "tests/**"
+  "files": [
+    "library"
   ],
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "build": "ttsc --build",
+    "watch": "ttsc --build --watch",
+    "rebuild": "yarn clean && yarn build",
+    "postversion": "git push --tags && git push",
+    "prepack": "yarn rebuild",
+    "clean": "rm -rf library && rm *.tsbuildinfo",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "yarn lint --fix",
+    "test": "jest tests",
+    "integrate": "yarn clean && yarn lint && yarn build && yarn test"
+  },
   "devDependencies": {
+    "@atweel/primitives": "file:./",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/parser": "^7.9.4",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-typescript": "^7.9.0",
+    "@babel/types": "^7.9.0",
     "@types/chai": "^4.2.11",
-    "@types/mocha": "^7.0.2",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.5",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
+    "@zerollup/ts-transform-paths": "^1.7.3",
+    "babel-jest": "^25.2.3",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.3",
-    "lerna": "^3.20.2",
+    "jest": "^25.2.3",
+    "node-dev": "^4.0.0",
+    "tempy": "^0.5.0",
+    "ts-node": "^8.8.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "ttypescript": "^1.5.7",
     "typescript": "^3.8.3"
   }
 }
