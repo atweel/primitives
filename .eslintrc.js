@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    ignorePatterns: ["node_modules/", "lib/", "app/"],
+    ignorePatterns: ["node_modules/", "library/", "app/"],
     parser: '@typescript-eslint/parser',
     plugins: [
         '@typescript-eslint',
@@ -30,5 +30,8 @@ module.exports = {
         "array-bracket-spacing": ["error", "always"],
         "eol-last": ["error", "always"],
         "semi": ["error", "always"]
+    },
+    globals: {
+        "module": "readonly"
     }
 };

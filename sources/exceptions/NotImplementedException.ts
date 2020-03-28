@@ -1,9 +1,9 @@
-class NotImplementedError extends Error {
+class NotImplementedException extends Error {
     constructor() {
         super('Not implemented.');
     }
 }
 
 export {
-    NotImplementedError,
+    NotImplementedException,
 };

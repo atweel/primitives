@@ -5,7 +5,7 @@ lerna exec yarn pack --scope "@atweel/primitives"
 
 package_file=$(find package -name "*.tgz" | xargs -I {} realpath {})
 
-cp -R ./tests/integration/{*.json,src} $test_dir/
+cp -R ./tests/integration/{*.json,sources} $test_dir/
 
 cd $test_dir/
 
@@ -19,6 +19,6 @@ yarn add file:$package_file
 
 rm $package_file
 
-ts-mocha "src/**/*.spec.ts"
+ts-mocha "sources/**/*.spec.ts"
 
 rm -rf $test_dir
