@@ -4,6 +4,12 @@
 
 The package contains simple types, interfaces, classes, and functions that are used throughout other Atweel packages. The package is specifically designed to be lightweight and use zero dependencies.
 
+### Exceptions
+
+#### NotImplementedException
+
+`NotImplementedException` class provides a standard implmentation for an error indicating that a certain functionality is not yet implemented.
+
 ## License
 
 Copyright 2020 Atweel Inc.
