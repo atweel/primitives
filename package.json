@@ -18,7 +18,6 @@
     "build": "ttsc --build package.tsconfig.json",
     "watch": "ttsc --build --watch package.tsconfig.json",
     "rebuild": "yarn clean && yarn build",
-    "postversion": "git push --tags && git push",
     "prepack": "yarn rebuild",
     "clean": "find . \\( -name \\*.tsbuildinfo -o -path ./library -o -name \\*.log ! -path ./node_modules/\\* \\) | xargs -I {} rm -rf {}",
     "lint:fix": "yarn lint --fix",
