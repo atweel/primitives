@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    ignorePatterns: ["node_modules/", "library/", "app/"],
+    ignorePatterns: ["node_modules/", "library/", "app/", "tests/hooks"],
     parser: '@typescript-eslint/parser',
     plugins: [
         '@typescript-eslint',

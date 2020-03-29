@@ -1,6 +1,6 @@
 import 'jest';
 import tempy from 'tempy';
-import { writeFileSync, rmdirSync, unlinkSync } from 'fs';
+import { writeFileSync, rmdirSync } from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import { sync as globSync } from 'glob';
@@ -15,8 +15,6 @@ for (const packageManager of PACKAGE_MANAGERS) {
         let packageFile;
 
         beforeAll(() => {
-            execSync('yarn pack');
-
             packageFile = globSync('./*.tgz', {
                 absolute: true,
             })[0];
@@ -30,8 +28,6 @@ for (const packageManager of PACKAGE_MANAGERS) {
             rmdirSync(packageDirectory, {
                 recursive: true,
             });
-
-            unlinkSync(packageFile);
         });
     
         test(`Installation via ${ packageManager }`, () => {
