@@ -19,8 +19,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.ROBBY_ATWEELS_GITHUB_TOKEN }}
 
       - name: Configure git user name & email
         run: |
@@ -59,5 +57,5 @@ jobs:
 
       - name: Push tags
         if: github.event_name == 'push'
-        run: git push --tags && git push
+        run: git push --tags
 
