@@ -57,7 +57,7 @@ jobs:
       - name: Configure git user name & email
         run: |
           git config --global user.email "robby@atweel.com" && \
-          git config --global user.name "Robby the robot"
+          git config --global user.name "Robby Atweel"
       - name: Increment prerelease version if no version tag assigned
         run: |
           git fetch --tags --quiet
