@@ -15,8 +15,8 @@
     "access": "restricted"
   },
   "scripts": {
-    "build": "ttsc --build",
-    "watch": "ttsc --build --watch",
+    "build": "ttsc --build package.tsconfig.json",
+    "watch": "ttsc --build --watch package.tsconfig.json",
     "rebuild": "yarn clean && yarn build",
     "postversion": "git push --tags && git push",
     "prepack": "yarn rebuild",
@@ -27,7 +27,6 @@
     "integrate": "yarn clean && yarn lint && yarn build && yarn test"
   },
   "devDependencies": {
-    "@atweel/primitives": "file:./",
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/parser": "^7.9.4",
@@ -49,6 +48,7 @@
     "jest": "^25.2.3",
     "node-dev": "^4.0.0",
     "tempy": "^0.5.0",
+    "ts-jest": "^25.2.1",
     "ts-node": "^8.8.1",
     "ts-node-dev": "^1.0.0-pre.44",
     "ttypescript": "^1.5.7",
