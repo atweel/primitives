@@ -55,7 +55,7 @@ jobs:
           yarn install --frozen-lockfile && \
           yarn integrate
 
-      - name: Push tags
+      - name: Push version update and tag
         if: github.event_name == 'push'
-        run: git push --tags
+        run: git push --tags && git push
 
