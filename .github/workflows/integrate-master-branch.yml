@@ -11,6 +11,8 @@ on:
 
 jobs:
   integrate:
+    name: Integrate
+    
     runs-on: ubuntu-latest
 
     env:
