@@ -12,7 +12,7 @@
     "library"
   ],
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "scripts": {
     "build": "ttsc --build package.tsconfig.json",
