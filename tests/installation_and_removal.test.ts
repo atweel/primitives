@@ -21,7 +21,7 @@ for (const packageManager of PACKAGE_MANAGERS) {
 
             packageDirectory = tempy.directory();
 
-            console.log(`Test package dierectory: ${ packageDirectory }`);
+            console.log(`Test package directory: ${ packageDirectory }`);
         });
 
         afterAll(() => {

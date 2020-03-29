@@ -4,58 +4,72 @@
 name: Integrate master branch
 
 on:
-    push:
-        branches: [master]
-    pull_request:
-        branches: [master]
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-        strategy:
-            matrix:
-                node-version: [10.x, 12.x]
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
 
-        env:
-            CI: true
-            NPM_AUTH_TOKEN: ${{ secrets.NPMJS_ORG_READER_TOKEN }}
+    env:
+      CI: true
+      NPM_AUTH_TOKEN: ${{ secrets.NPMJS_ORG_READER_TOKEN }}
 
-        steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - run: echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
-            - run: yarn install
-            - run: yarn integrate
+    steps:
+      - uses: actions/checkout@v2
 
-    tag:
-        runs-on: ubuntu-latest
+      - name: Resolve yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-        if: github.event_name == 'push'
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-        needs: [build]
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-        steps:
-            - uses: actions/checkout@v2
-            - name: Configure git user name & email
-              run: |
-                  git config --global user.email "robby@atweel.com" && \
-                  git config --global user.name "Robby the robot"
-            - name: Increment prerelease version if no version tag assigned
-              run: |
-                  git fetch --tags --quiet
-                  if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
-                    then yarn version --prerelease --no-commit-hooks 
-                  fi
+      - run: |
+          echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc && \
+          yarn install --frozen-lockfile && \
+          yarn integrate
 
-    publish:
-        runs-on: ubuntu-latest
+  tag:
+    runs-on: ubuntu-latest
 
-        needs: [tag]
+    if: github.event_name == 'push'
 
-        steps:
-            - uses: actions/checkout@v2
-            - run: git fetch --tags --quiet
+    needs: [build]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure git user name & email
+        run: |
+          git config --global user.email "robby@atweel.com" && \
+          git config --global user.name "Robby the robot"
+      - name: Increment prerelease version if no version tag assigned
+        run: |
+          git fetch --tags --quiet
+          if [[ $(git tag --points-at HEAD) !=  "v"* ]]; 
+            then yarn version --prerelease --no-commit-hooks 
+          fi
+
+  publish:
+    runs-on: ubuntu-latest
+
+    needs: [tag]
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: git fetch --tags --quiet
