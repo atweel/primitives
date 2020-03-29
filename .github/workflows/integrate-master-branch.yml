@@ -57,5 +57,5 @@ jobs:
 
       - name: Push tags
         if: github.event_name == 'push'
-        run: git push --tags && push
+        run: git push --tags && git push
 
