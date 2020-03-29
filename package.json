@@ -20,9 +20,9 @@
     "rebuild": "yarn clean && yarn build",
     "postversion": "git push --tags && git push",
     "prepack": "yarn rebuild",
-    "clean": "rm -rf library && rm *.tsbuildinfo",
-    "lint": "eslint --ext .ts .",
+    "clean": "find . \\( -name \\*.tsbuildinfo -o -path ./library -o -name \\*.log ! -path ./node_modules/\\* \\) | xargs -I {} rm -rf {}",
     "lint:fix": "yarn lint --fix",
+    "lint": "eslint --ext .ts .",
     "test": "jest tests",
     "integrate": "yarn clean && yarn lint && yarn build && yarn test"
   },
