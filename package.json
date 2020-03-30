@@ -1,6 +1,6 @@
 {
   "name": "@atweel/primitives",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "main": "library/exports.js",
   "repository": "https://github.com/atweel/primitives.git",
   "author": "eduard@atweel.com",
