@@ -1,3 +1,5 @@
 export * from 'exceptions/NotImplementedException';
 export * from 'exceptions/UnknownException';
 export * from 'miscellaneous/PurelyFunctional';
+export * from 'miscellaneous/Disposable';
+export * from 'miscellaneous/AsyncDisposable';
