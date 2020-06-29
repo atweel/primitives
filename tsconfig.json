@@ -1,24 +1,24 @@
 {
   "compilerOptions": {
-    "incremental": true,                   
-    "target": "es2018",                    
-    "module": "commonjs",                  
-    "declaration": true,                   
-    "declarationMap": true,                
-    "sourceMap": true,                     
-    "rootDir": "./",                       
-    "composite": true,                     
-    "moduleResolution": "node",           
-    "baseUrl": ".",                       
+    "incremental": true,
+    "target": "es2018",
+    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "rootDir": "./",
+    "composite": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
     "paths": {
       "exceptions/*": ["sources/exceptions/*"],
       "miscellaneous/*": ["sources/miscellaneous/*"],
       "self": [ "library/exports" ]
-    },                           
-    "types": ["node"],           
-    "esModuleInterop": true,     
-    "experimentalDecorators": true,      
-    "emitDecoratorMetadata": true,       
+    },
+    "types": [ "node", "jest" ],
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "plugins": [
       {
           "transform": "@zerollup/ts-transform-paths"
