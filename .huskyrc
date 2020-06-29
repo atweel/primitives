@@ -1,7 +1,6 @@
 {
     hooks: {
         "pre-commit": "yarn integrate",
-        "pre-push": "git pull --rebase",
         'commit-msg': 'yarn commitlint -E HUSKY_GIT_PARAMS'
     }
 }
