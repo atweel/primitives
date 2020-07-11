@@ -26,12 +26,6 @@
     "integrate": "yarn clean && yarn lint && yarn build && yarn test"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/parser": "^7.9.4",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-typescript": "^7.9.0",
-    "@babel/types": "^7.9.0",
     "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^9.0.1",
     "@types/glob": "^7.1.1",
@@ -40,7 +34,6 @@
     "@typescript-eslint/eslint-plugin": "^2.25.0",
     "@typescript-eslint/parser": "^2.25.0",
     "@zerollup/ts-transform-paths": "^1.7.3",
-    "babel-jest": "^25.2.3",
     "eslint": "^6.8.0",
     "glob": "^7.1.6",
     "husky": "^4.2.3",
