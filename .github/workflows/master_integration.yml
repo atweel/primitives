@@ -6,6 +6,8 @@ name: Integrate master branch
 on:
   push:
     branches: [master]
+    paths-ignore: 
+      - "**/package.json"
 
 jobs:
   integrate:
