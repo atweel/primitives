@@ -3,4 +3,4 @@ export * from 'exceptions/UnknownException';
 export * from 'miscellaneous/PurelyFunctional';
 export * from 'miscellaneous/Disposable';
 export * from 'miscellaneous/AsyncDisposable';
-export * from './types';
+export * from 'miscellaneous/Constructor';
