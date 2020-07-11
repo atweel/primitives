@@ -7,3 +7,5 @@ export * from 'miscellaneous/Constructor';
 export * from 'miscellaneous/Clonable';
 export * from 'miscellaneous/Reconstructible';
 export * from 'miscellaneous/Reprototypable';
+export * from 'miscellaneous/Annotated';
+export * from 'miscellaneous/Callable';
