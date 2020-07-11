@@ -10,3 +10,5 @@ export * from 'miscellaneous/Reprototypable';
 export * from 'miscellaneous/Annotated';
 export * from 'miscellaneous/Callable';
 export * from 'miscellaneous/Marked';
+export * from 'api/mark';
+export * from 'api/isMarked';
