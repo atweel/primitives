@@ -9,3 +9,4 @@ export * from 'miscellaneous/Reconstructible';
 export * from 'miscellaneous/Reprototypable';
 export * from 'miscellaneous/Annotated';
 export * from 'miscellaneous/Callable';
+export * from 'miscellaneous/Marked';
