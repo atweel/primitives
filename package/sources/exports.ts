@@ -12,3 +12,5 @@ export * from 'miscellaneous/Callable';
 export * from 'miscellaneous/Marked';
 export { default as mark } from 'api/mark';
 export { default as isMarked } from 'api/isMarked';
+export { default as annotate } from 'api/annotate';
+export { default as isAnnotated } from 'api/isAnnotated';
