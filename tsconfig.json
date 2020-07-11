@@ -13,6 +13,7 @@
     "paths": {
       "exceptions/*": ["sources/exceptions/*"],
       "miscellaneous/*": ["sources/miscellaneous/*"],
+      "api/*": ["sources/api/*"],
       "self": [ "library/exports" ]
     },
     "types": [ "node", "jest" ],
