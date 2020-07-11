@@ -6,6 +6,8 @@ name: Integrate release branch
 on:
   push:
     branches: [ "releases/*" ]
+    paths:
+      - "!**/package.json"
 
 jobs:
   integrate:
