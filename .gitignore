@@ -3,3 +3,5 @@ library/
 *.tsbuildinfo
 *.log
 *.tgz
+
+.DS_Store

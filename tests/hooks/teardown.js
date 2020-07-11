@@ -6,7 +6,9 @@ const fs = require('fs');
 module.exports = async () => {
     console.log('Performing global test teardown...');
 
-    for (const file of glob.sync('*.tgz', { cwd: path.resolve(__dirname, '../..'), absolute: true })) {
+    const packageDir = path.resolve(__dirname, '../../package/');
+
+    for (const file of glob.sync(packageDir + '/*.tgz', { cwd: path.resolve(__dirname, '../..'), absolute: true })) {
         fs.unlinkSync(file);
     }
 };

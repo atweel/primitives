@@ -6,7 +6,7 @@ module.exports = async () => {
     console.log('Performing global test setup...');
 
     childProcess.execSync('yarn pack', {
-        cwd: path.resolve(__dirname, '../..'),
+        cwd: path.resolve(__dirname, '../../package'),
     });
 };
 
