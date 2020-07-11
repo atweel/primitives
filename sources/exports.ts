@@ -5,3 +5,4 @@ export * from 'miscellaneous/Disposable';
 export * from 'miscellaneous/AsyncDisposable';
 export * from 'miscellaneous/Constructor';
 export * from 'miscellaneous/Clonable';
+export * from 'miscellaneous/Reconstructible';
