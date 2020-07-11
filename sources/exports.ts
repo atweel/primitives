@@ -10,5 +10,5 @@ export * from 'miscellaneous/Reprototypable';
 export * from 'miscellaneous/Annotated';
 export * from 'miscellaneous/Callable';
 export * from 'miscellaneous/Marked';
-export * from 'api/mark';
-export * from 'api/isMarked';
+export { default as mark } from 'api/mark';
+export { default as isMarked } from 'api/isMarked';
