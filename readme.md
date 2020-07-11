@@ -1,6 +1,6 @@
-![Integration on master](https://github.com/atweel/primitives/workflows/Integrate%20master%20branch/badge.svg?branch=master)
-
 # Primitives package by Atweel Inc.
+
+![Integration on master](https://github.com/atweel/primitives/workflows/Integrate%20master%20branch/badge.svg?branch=master)
 
 The package contains simple types, interfaces, classes, and functions that are used throughout other Atweel packages. The package is specifically designed to be lightweight and use zero dependencies.
 
