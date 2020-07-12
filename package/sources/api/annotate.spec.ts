@@ -12,6 +12,7 @@ describe('annotate', () => {
         
         const annotated = annotate(target);
 
+        expect(Object.is(annotated, target)).toBe(true);
         expect(annotated.property).toBe('value');
         expect(annotated[Annotations]).toBeDefined();
     });
@@ -41,5 +42,18 @@ describe('annotate', () => {
         expect(annotated.property).toBe('value');
         expect(annotated[Annotations]).toBeDefined();
         expect(annotated[Annotations].additional).toBe('value');
+    });
+
+    it('correctly annotates a function', () => {
+        const target = (arg: string): string => arg;
+        
+        const annotated = annotate(target, {
+            additional: 'value',
+        });
+
+        expect(Object.is(annotated, target)).toBe(true);
+        expect(annotated[Annotations]).toBeDefined();
+        expect(annotated[Annotations].additional).toBe('value');
+        expect(annotated('test')).toBe('test');
     });
 });
