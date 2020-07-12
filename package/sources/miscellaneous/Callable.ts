@@ -1,4 +1,4 @@
-import { Annotated, Annotations } from './Annotated';
+import { Annotated } from './Annotated';
 
 enum CallableExecutionMode {
     Synchronous = 'SYNCHRONOUS',
