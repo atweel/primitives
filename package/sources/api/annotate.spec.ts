@@ -37,9 +37,9 @@ describe('annotate', () => {
             additional: 'value',
         });
 
-        expect(Object.is(annotated, target)).toBe(false);
+        expect(Object.is(annotated, target)).toBe(true);
         expect(annotated.property).toBe('value');
         expect(annotated[Annotations]).toBeDefined();
-        expect(annotated.additional).toBe('value');
+        expect(annotated[Annotations].additional).toBe('value');
     });
 });
